@@ -1,0 +1,5 @@
+{
+  "name": "Shader Lab",
+  "description": "A creative coding experiment using P5.js and custom GLSL shaders to render graphical effects on 3D primitives.",
+  "requestFramePermissions": []
+}

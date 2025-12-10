@@ -1,17 +1,19 @@
 
+export type LayerKey = 'holographic' | 'liquid_metal' | 'vertex_pulse' | 'pixel_artefact' | 'double_exposure' | 'glitch' | 'halftone' | 'contrast';
+
 export interface ShaderLayer {
   enabled: boolean;
   intensity: number;
+  timeScale: number;
+  uvScale: number;
+  // Optional extra params for specific shaders (like Liquid Metal)
+  noiseScale?: number;
+  noiseSpeed?: number;
 }
 
 export interface ShaderConfig {
+  order: LayerKey[];
   layers: {
-    holographic: ShaderLayer;
-    liquid_metal: ShaderLayer;
-    vertex_pulse: ShaderLayer;
-    pixel_artefact: ShaderLayer;
-    double_exposure: ShaderLayer;
+    [key in LayerKey]: ShaderLayer;
   };
-  speed: number;
-  scale: number;
 }
